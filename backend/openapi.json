@@ -1,0 +1,1978 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "FossilSafe API",
+    "version": "1.0.0",
+    "description": "Auto-generated API contract from backend code."
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "index",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/<path:path>": {
+      "get": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "index",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/audit": {
+      "get": {
+        "summary": "Get audit log entries with pagination.",
+        "description": "Get audit log entries with pagination.\nAdmin only - sensitive operation history.",
+        "operationId": "audit.get_audit_log",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/audit/export": {
+      "get": {
+        "summary": "Export audit log with verification signature.",
+        "description": "Export audit log with verification signature.\nFor compliance and external auditing.",
+        "operationId": "audit.export_audit_log",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/audit/stats": {
+      "get": {
+        "summary": "Get audit log statistics.",
+        "description": "Get audit log statistics.",
+        "operationId": "audit.get_audit_stats",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/audit/verify": {
+      "get": {
+        "summary": "Verify the integrity of the audit log hash chain.",
+        "description": "Verify the integrity of the audit log hash chain.\nDetects if any entries have been tampered with.",
+        "operationId": "audit.verify_audit_chain",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/2fa/disable": {
+      "post": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "auth.disable_2fa",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/2fa/enable": {
+      "post": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "auth.enable_2fa",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/2fa/setup": {
+      "post": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "auth.setup_2fa",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "summary": "Authenticate and create session.",
+        "description": "Authenticate and create session.",
+        "operationId": "auth.login",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/logout": {
+      "post": {
+        "summary": "Clear session.",
+        "description": "Clear session.",
+        "operationId": "auth.logout",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/me": {
+      "get": {
+        "summary": "Get current user info.",
+        "description": "Get current user info.",
+        "operationId": "auth.get_me",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/setup": {
+      "post": {
+        "summary": "Complete initial setup by creating the first admin user.",
+        "description": "Complete initial setup by creating the first admin user.",
+        "operationId": "setup.complete_setup",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/setup-status": {
+      "get": {
+        "summary": "Check if initial setup is required.",
+        "description": "Check if initial setup is required.",
+        "operationId": "setup.get_setup_status",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/sso/callback": {
+      "get": {
+        "summary": "Handle SSO callback.",
+        "description": "Handle SSO callback.",
+        "operationId": "auth.sso_callback",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/sso/config": {
+      "get": {
+        "summary": "Get current SSO configuration.",
+        "description": "Get current SSO configuration.",
+        "operationId": "auth.get_sso_config",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "Update SSO configuration.",
+        "description": "Update SSO configuration.",
+        "operationId": "auth.update_sso_config",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/sso/login": {
+      "get": {
+        "summary": "Start SSO login flow.",
+        "description": "Start SSO login flow.",
+        "operationId": "auth.sso_login",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/users": {
+      "get": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "auth.list_users",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "auth.create_user",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/users/<int:user_id>": {
+      "put": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "auth.update_user",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "auth.delete_user",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/auth/users/<int:user_id>/disable-2fa": {
+      "post": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "auth.admin_disable_2fa",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/autopilot/actions": {
+      "get": {
+        "summary": "Get recent autopilot actions",
+        "description": "Get recent autopilot actions",
+        "operationId": "get_autopilot_actions",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/autopilot/alerts": {
+      "get": {
+        "summary": "Get autopilot alerts",
+        "description": "Get autopilot alerts",
+        "operationId": "get_autopilot_alerts",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/autopilot/alerts/<alert_id>/acknowledge": {
+      "post": {
+        "summary": "Acknowledge an alert",
+        "description": "Acknowledge an alert",
+        "operationId": "acknowledge_alert",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/autopilot/next-action": {
+      "get": {
+        "summary": "Get the next required operator action",
+        "description": "Get the next required operator action",
+        "operationId": "get_next_action",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/autopilot/settings": {
+      "get": {
+        "summary": "Get autopilot settings",
+        "description": "Get autopilot settings",
+        "operationId": "get_autopilot_settings",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "Update autopilot settings",
+        "description": "Update autopilot settings",
+        "operationId": "update_autopilot_settings",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/autopilot/status": {
+      "get": {
+        "summary": "Get complete autopilot status",
+        "description": "Get complete autopilot status",
+        "operationId": "get_autopilot_status",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/banner": {
+      "get": {
+        "summary": "Get global status banner data for header display",
+        "description": "Get global status banner data for header display",
+        "operationId": "get_global_banner",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/catalog/backup": {
+      "post": {
+        "summary": "Create a backup of the catalog database",
+        "description": "Create a backup of the catalog database",
+        "operationId": "backup_catalog",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/catalog/backups": {
+      "get": {
+        "summary": "List all external catalog backups.",
+        "description": "List all external catalog backups.",
+        "operationId": "external_catalog.list_external_backups",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/catalog/export": {
+      "post": {
+        "summary": "Export full catalog to external tape.",
+        "description": "Export full catalog to external tape.",
+        "operationId": "external_catalog.export_catalog",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/catalog/import": {
+      "post": {
+        "summary": "Import catalog from external tape.",
+        "description": "Import catalog from external tape.",
+        "operationId": "external_catalog.import_external_catalog",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/catalog/rebuild-index": {
+      "post": {
+        "summary": "Rebuild the catalog search index (FTS).",
+        "description": "Rebuild the catalog search index (FTS).",
+        "operationId": "rebuild_catalog_index",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/catalog/rescan-tape": {
+      "post": {
+        "summary": "Rescan a tape and rebuild catalog entries for it.",
+        "description": "Rescan a tape and rebuild catalog entries for it.",
+        "operationId": "rescan_tape_catalog",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/catalog/restore": {
+      "post": {
+        "summary": "Restore catalog from a backup",
+        "description": "Restore catalog from a backup",
+        "operationId": "restore_catalog",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/config/export": {
+      "get": {
+        "summary": "Export all configuration as JSON",
+        "description": "Export all configuration as JSON",
+        "operationId": "export_config",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/config/import": {
+      "post": {
+        "summary": "Import configuration from JSON",
+        "description": "Import configuration from JSON",
+        "operationId": "import_config",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/csrf-token": {
+      "get": {
+        "summary": "Get CSRF token for frontend",
+        "description": "Get CSRF token for frontend",
+        "operationId": "auth.get_csrf_token",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/database/info": {
+      "get": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "get_database_info",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/diagnostics/bundle": {
+      "post": {
+        "summary": "Generate a support bundle for download.",
+        "description": "Generate a support bundle for download.",
+        "operationId": "diagnostics.create_support_bundle",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/diagnostics/bundle/download": {
+      "get": {
+        "summary": "Download a previously generated support bundle.",
+        "description": "Download a previously generated support bundle.",
+        "operationId": "diagnostics.download_support_bundle",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/diagnostics/health": {
+      "get": {
+        "summary": "Run a quick system health check.",
+        "description": "Run a quick system health check.",
+        "operationId": "diagnostics.get_health",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/diagnostics/reports/<int:report_id>/download": {
+      "get": {
+        "summary": "Download a specific diagnostics report (JSON or Text).",
+        "description": "Download a specific diagnostics report (JSON or Text).",
+        "operationId": "diagnostics.download_diagnostics_report",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/diagnostics/run": {
+      "post": {
+        "summary": "Run full system diagnostics and create a job for tracking.",
+        "description": "Run full system diagnostics and create a job for tracking.",
+        "operationId": "diagnostics.run_diagnostics",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/diagnostics/smb_selftest": {
+      "post": {
+        "summary": "Run a local SMB stack self-test without external dependencies.",
+        "description": "Run a local SMB stack self-test without external dependencies.",
+        "operationId": "smb_selftest.diagnostics_smb_selftest",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/drive-only/eject-tape": {
+      "post": {
+        "summary": "Signal manual tape removal in drive-only mode.",
+        "description": "Signal manual tape removal in drive-only mode.",
+        "operationId": "tapes.eject_manual_tape",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/drive-only/insert-tape": {
+      "post": {
+        "summary": "Confirm manual tape insertion in drive-only mode.",
+        "description": "Confirm manual tape insertion in drive-only mode.",
+        "operationId": "tapes.confirm_tape_inserted",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/drive-only/status": {
+      "get": {
+        "summary": "Check if running in drive-only mode (no changer)",
+        "description": "Check if running in drive-only mode (no changer)",
+        "operationId": "tapes.get_drive_only_status",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/drive/clean": {
+      "post": {
+        "summary": "Initiate a drive cleaning cycle.",
+        "description": "Initiate a drive cleaning cycle.",
+        "operationId": "tapes.clean_drive",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/drive/cleaning-tapes": {
+      "get": {
+        "summary": "Get list of cleaning tapes and their usage.",
+        "description": "Get list of cleaning tapes and their usage.",
+        "operationId": "get_cleaning_tapes",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/drive/health": {
+      "get": {
+        "summary": "Get drive health status including cleaning requirements.",
+        "description": "Get drive health status including cleaning requirements.",
+        "operationId": "get_drive_health",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/external-media": {
+      "get": {
+        "summary": "List all detected external/removable drives.",
+        "description": "List all detected external/removable drives.",
+        "operationId": "list_external_media",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/external-media/<path:device>/info": {
+      "get": {
+        "summary": "Get detailed information about a specific external drive.",
+        "description": "Get detailed information about a specific external drive.",
+        "operationId": "get_external_media_info",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/external-media/<path:device>/mount": {
+      "post": {
+        "summary": "Mount an external drive.",
+        "description": "Mount an external drive.",
+        "operationId": "mount_external_media",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/external-media/<path:device>/unmount": {
+      "post": {
+        "summary": "Unmount an external drive.",
+        "description": "Unmount an external drive.",
+        "operationId": "unmount_external_media",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/files/by-job/<int:job_id>": {
+      "get": {
+        "summary": "Get files for a specific job.",
+        "description": "Get files for a specific job.",
+        "operationId": "files.get_job_files",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/files/by-tape/<barcode>": {
+      "get": {
+        "summary": "Get files for a specific tape.",
+        "description": "Get files for a specific tape.",
+        "operationId": "files.get_tape_files",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/files/search": {
+      "post": {
+        "summary": "Search for files in the database.",
+        "description": "Search for files in the database.",
+        "operationId": "files.search_files",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/frontend/log": {
+      "post": {
+        "summary": "Capture React error boundary reports and other frontend logs",
+        "description": "Capture React error boundary reports and other frontend logs",
+        "operationId": "logs.log_frontend_error",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/healthz": {
+      "get": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "healthz",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/jobs": {
+      "get": {
+        "summary": "List all jobs with pagination.",
+        "description": "List all jobs with pagination.",
+        "operationId": "jobs.get_jobs",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create and start a new job.",
+        "description": "Create and start a new job.",
+        "operationId": "jobs.create_job",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/jobs/<int:job_id>": {
+      "get": {
+        "summary": "Get details and logs for a specific job.",
+        "description": "Get details and logs for a specific job.",
+        "operationId": "jobs.get_job",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/jobs/<int:job_id>/cancel": {
+      "post": {
+        "summary": "Cancel a running job.",
+        "description": "Cancel a running job.",
+        "operationId": "jobs.cancel_job",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/jobs/<int:job_id>/checkpoint": {
+      "get": {
+        "summary": "Get checkpoint for a specific job",
+        "description": "Get checkpoint for a specific job",
+        "operationId": "get_job_checkpoint",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/jobs/<int:job_id>/pause": {
+      "post": {
+        "summary": "Pause a running job at next safe checkpoint",
+        "description": "Pause a running job at next safe checkpoint",
+        "operationId": "pause_job",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/jobs/<int:job_id>/resume": {
+      "post": {
+        "summary": "Resume a paused or interrupted job",
+        "description": "Resume a paused or interrupted job",
+        "operationId": "resume_interrupted_job",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/jobs/<int:job_id>/timeline": {
+      "get": {
+        "summary": "Get detailed timeline for a job",
+        "description": "Get detailed timeline for a job",
+        "operationId": "get_job_timeline",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/jobs/dryrun": {
+      "post": {
+        "summary": "Perform a dry-run to estimate job requirements.",
+        "description": "Perform a dry-run to estimate job requirements.",
+        "operationId": "jobs.dry_run",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/jobs/interrupted": {
+      "get": {
+        "summary": "Get jobs that can be resumed",
+        "description": "Get jobs that can be resumed",
+        "operationId": "get_interrupted_jobs",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/jobs/preflight": {
+      "post": {
+        "summary": "Run preflight checks for a potential job.",
+        "description": "Run preflight checks for a potential job.",
+        "operationId": "jobs.run_preflight",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/library/force-unload": {
+      "post": {
+        "summary": "Force an unload by moving a tape from drive to slot directly.",
+        "description": "Force an unload by moving a tape from drive to slot directly.",
+        "operationId": "tapes.force_unload_tape",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/library/load/<barcode>": {
+      "post": {
+        "summary": "Load a tape by barcode into the first available drive.",
+        "description": "Load a tape by barcode into the first available drive.",
+        "operationId": "tapes.load_tape",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/library/reconcile": {
+      "get": {
+        "summary": "Compare database inventory with actual library scan",
+        "description": "Compare database inventory with actual library scan",
+        "operationId": "tapes.get_reconciliation_status",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "Perform reconciliation - update DB to match library",
+        "description": "Perform reconciliation - update DB to match library",
+        "operationId": "tapes.perform_reconciliation",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/library/recover": {
+      "post": {
+        "summary": "Attempt to recover library from an inconsistent state.",
+        "description": "Attempt to recover library from an inconsistent state.",
+        "operationId": "tapes.recover_library",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/library/scan": {
+      "post": {
+        "summary": "Trigger a library scan (fast or deep).",
+        "description": "Trigger a library scan (fast or deep).",
+        "operationId": "tapes.scan_library",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/library/unload": {
+      "post": {
+        "summary": "Unload the tape from a drive.",
+        "description": "Unload the tape from a drive.",
+        "operationId": "tapes.unload_tape",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/license": {
+      "get": {
+        "summary": "Returns HWID and current license status.",
+        "description": "Returns HWID and current license status.",
+        "operationId": "get_license_info",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "Uploads and validates a new license key.",
+        "description": "Uploads and validates a new license key.",
+        "operationId": "update_license_key",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/locks": {
+      "get": {
+        "summary": "Get current resource locks",
+        "description": "Get current resource locks",
+        "operationId": "get_locks",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/logs": {
+      "get": {
+        "summary": "Retrieve system logs with filtering and pagination",
+        "description": "Retrieve system logs with filtering and pagination",
+        "operationId": "logs.get_logs",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/logs/cleanup": {
+      "post": {
+        "summary": "Clean up logs older than the specified retention period.",
+        "description": "Clean up logs older than the specified retention period.",
+        "operationId": "logs.cleanup_logs",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/logs/stats": {
+      "get": {
+        "summary": "Get log statistics for monitoring.",
+        "description": "Get log statistics for monitoring.",
+        "operationId": "logs.get_log_stats",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/maintenance/active": {
+      "get": {
+        "summary": "Check if currently in a maintenance window",
+        "description": "Check if currently in a maintenance window",
+        "operationId": "is_maintenance_active",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/maintenance/windows": {
+      "get": {
+        "summary": "Get configured maintenance windows",
+        "description": "Get configured maintenance windows",
+        "operationId": "get_maintenance_windows",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a maintenance window",
+        "description": "Add a maintenance window",
+        "operationId": "add_maintenance_window",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/nfs/exports": {
+      "get": {
+        "summary": "List available NFS exports from a server.",
+        "description": "List available NFS exports from a server.",
+        "operationId": "list_nfs_exports",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/notifications/settings": {
+      "get": {
+        "summary": "Get notification configuration.",
+        "description": "Get notification configuration.",
+        "operationId": "get_notification_settings",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "Update notification configuration.",
+        "description": "Update notification configuration.",
+        "operationId": "update_notification_settings",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/notifications/test": {
+      "post": {
+        "summary": "Test notification delivery.",
+        "description": "Test notification delivery.",
+        "operationId": "test_notification",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/preferences": {
+      "get": {
+        "summary": "Get all user preferences.",
+        "description": "Get all user preferences.",
+        "operationId": "preferences.get_preferences",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update user preferences.",
+        "description": "Update user preferences.",
+        "operationId": "preferences.update_preferences",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/preferences/<key>": {
+      "get": {
+        "summary": "Get a specific preference.",
+        "description": "Get a specific preference.",
+        "operationId": "preferences.get_preference",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/rclone/remotes": {
+      "get": {
+        "summary": "List configured rclone remotes.",
+        "description": "List configured rclone remotes.",
+        "operationId": "list_rclone_remotes",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/rclone/test": {
+      "post": {
+        "summary": "Test rclone remote access.",
+        "description": "Test rclone remote access.",
+        "operationId": "test_rclone_remote",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/recovery/emergency-dump": {
+      "post": {
+        "summary": "Start an emergency tape dump (tar extraction).",
+        "description": "Start an emergency tape dump (tar extraction).",
+        "operationId": "recovery.emergency_dump",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/recovery/import": {
+      "post": {
+        "summary": "Import discovered catalogs to database.",
+        "description": "Import discovered catalogs to database.",
+        "operationId": "recovery.import_catalog",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/recovery/rebuild": {
+      "post": {
+        "summary": "Start full catalog rebuild from multiple tapes.",
+        "description": "Start full catalog rebuild from multiple tapes.",
+        "operationId": "recovery.start_rebuild",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/recovery/scan-tape": {
+      "post": {
+        "summary": "Scan a single tape for catalog.",
+        "description": "Scan a single tape for catalog.",
+        "operationId": "recovery.scan_tape",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/recovery/status": {
+      "get": {
+        "summary": "Get current rebuild status.",
+        "description": "Get current rebuild status.",
+        "operationId": "recovery.get_status",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/restore": {
+      "post": {
+        "summary": "Initiate a restore operation.",
+        "description": "Initiate a restore operation.",
+        "operationId": "restore.initiate_restore",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/restore/<int:restore_id>/confirm-tape": {
+      "post": {
+        "summary": "Confirm a tape for a restore job.",
+        "description": "Confirm a tape for a restore job.",
+        "operationId": "restore.confirm_tape",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/restore/jobs": {
+      "get": {
+        "summary": "Get all restore jobs.",
+        "description": "Get all restore jobs.",
+        "operationId": "restore.get_restore_jobs",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/restore/start": {
+      "post": {
+        "summary": "Initiate a restore operation.",
+        "description": "Initiate a restore operation.",
+        "operationId": "restore.initiate_restore",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/schedules": {
+      "get": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "get_schedules",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "create_schedule",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/schedules/<int:schedule_id>/toggle": {
+      "post": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "toggle_schedule",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/search": {
+      "get": {
+        "summary": "Global file search.",
+        "description": "Global file search.",
+        "operationId": "api_search_files",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/selftest/smb": {
+      "post": {
+        "summary": "Test SMB connectivity to a given path.",
+        "description": "Test SMB connectivity to a given path.",
+        "operationId": "smb_selftest.selftest_smb",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/settings": {
+      "get": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "get_settings",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "No description",
+        "description": "No description",
+        "operationId": "update_settings",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/setup/complete": {
+      "post": {
+        "summary": "Mark setup as complete",
+        "description": "Mark setup as complete",
+        "operationId": "complete_setup",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/setup/initialize-all": {
+      "post": {
+        "summary": "Initialize all selected tapes",
+        "description": "Initialize all selected tapes",
+        "operationId": "initialize_all_tapes",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/setup/initialize-tape/<barcode>": {
+      "post": {
+        "summary": "Initialize a single tape with LTFS format",
+        "description": "Initialize a single tape with LTFS format",
+        "operationId": "initialize_single_tape",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/setup/library-settings": {
+      "post": {
+        "summary": "Save library configuration settings",
+        "description": "Save library configuration settings",
+        "operationId": "save_library_settings",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/setup/scan-hardware": {
+      "post": {
+        "summary": "Scan for tape drives and changers/libraries using lsscsi and sg_inq",
+        "description": "Scan for tape drives and changers/libraries using lsscsi and sg_inq",
+        "operationId": "scan_hardware",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/setup/status": {
+      "get": {
+        "summary": "Check if initial setup has been completed",
+        "description": "Check if initial setup has been completed",
+        "operationId": "get_setup_status",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/sources": {
+      "get": {
+        "summary": "List all configured sources.",
+        "description": "List all configured sources.",
+        "operationId": "sources.get_sources",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new source configuration.",
+        "description": "Create a new source configuration.",
+        "operationId": "sources.create_source",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/sources/<int:source_id>": {
+      "delete": {
+        "summary": "Delete a source configuration.",
+        "description": "Delete a source configuration.",
+        "operationId": "sources.delete_source",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/sources/<source_id>": {
+      "get": {
+        "summary": "Get a stored source.",
+        "description": "Get a stored source.",
+        "operationId": "get_source",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an existing source.",
+        "description": "Update an existing source.",
+        "operationId": "update_source",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a stored source.",
+        "description": "Delete a stored source.",
+        "operationId": "delete_source",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/sources/browse": {
+      "post": {
+        "summary": "Browse paths for a source (Local or SMB).",
+        "description": "Browse paths for a source (Local or SMB).",
+        "operationId": "browse_source",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/sources/test": {
+      "post": {
+        "summary": "Test connection for a source configuration (unsaved).",
+        "description": "Test connection for a source configuration (unsaved).",
+        "operationId": "sources.test_source_connection",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/spanning/<int:job_id>/provide-tape": {
+      "post": {
+        "summary": "Provide next tape for spanning operation.",
+        "description": "Provide next tape for spanning operation.",
+        "operationId": "provide_next_tape",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/spanning/<int:job_id>/request-change": {
+      "post": {
+        "summary": "Request a tape change (called by tar new-volume-script).",
+        "description": "Request a tape change (called by tar new-volume-script).",
+        "operationId": "request_tape_change",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/spanning/<int:job_id>/status": {
+      "get": {
+        "summary": "Get spanning session status for a job.",
+        "description": "Get spanning session status for a job.",
+        "operationId": "get_spanning_status",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ssh/public_key": {
+      "get": {
+        "summary": "Retrieve the appliance SSH public key for remote setup.",
+        "description": "Retrieve the appliance SSH public key for remote setup.",
+        "operationId": "get_appliance_public_key",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ssh/test": {
+      "post": {
+        "summary": "Test SSH connectivity using the appliance key.",
+        "description": "Test SSH connectivity using the appliance key.",
+        "operationId": "test_ssh_connection",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/stats/dashboard": {
+      "get": {
+        "summary": "Get aggregated dashboard statistics.",
+        "description": "Get aggregated dashboard statistics.",
+        "operationId": "api_get_dashboard_stats",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/status": {
+      "get": {
+        "summary": "Compatibility endpoint for status checks.",
+        "description": "Compatibility endpoint for status checks.",
+        "operationId": "api_status_compat",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/status/banner": {
+      "get": {
+        "summary": "Get global status for status banner",
+        "description": "Get global status for status banner",
+        "operationId": "get_status_banner",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/system/info": {
+      "get": {
+        "summary": "Get general system info",
+        "description": "Get general system info",
+        "operationId": "system.get_system_info",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/system/kms": {
+      "get": {
+        "summary": "Get current KMS configuration.",
+        "description": "Get current KMS configuration.",
+        "operationId": "system.get_kms_config",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "Update KMS configuration and test connection.",
+        "description": "Update KMS configuration and test connection.",
+        "operationId": "system.update_kms_config",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/system/metrics/prometheus": {
+      "get": {
+        "summary": "Get system metrics in Prometheus format.",
+        "description": "Get system metrics in Prometheus format.",
+        "operationId": "system.get_prometheus_metrics",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/system/ssh-key": {
+      "get": {
+        "summary": "Get appliance public SSH key",
+        "description": "Get appliance public SSH key",
+        "operationId": "system.get_ssh_public_key",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/system/stats": {
+      "get": {
+        "summary": "Get real-time system resource usage.",
+        "description": "Get real-time system resource usage.",
+        "operationId": "system.get_system_stats",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/system/streaming": {
+      "get": {
+        "summary": "Get streaming pipeline configuration.",
+        "description": "Get streaming pipeline configuration.",
+        "operationId": "system.get_streaming_config",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "summary": "Update streaming pipeline configuration.",
+        "description": "Update streaming pipeline configuration.",
+        "operationId": "system.update_streaming_config",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tape/move": {
+      "post": {
+        "summary": "Move a tape between library elements.",
+        "description": "Move a tape between library elements.",
+        "operationId": "tapes.move_tape",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes": {
+      "get": {
+        "summary": "Retrieve all tapes with updated status and active job overlay.",
+        "description": "Retrieve all tapes with updated status and active job overlay.",
+        "operationId": "tapes.get_tapes",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes/<barcode>": {
+      "get": {
+        "summary": "Retrieve detailed information about a specific tape.",
+        "description": "Retrieve detailed information about a specific tape.",
+        "operationId": "tapes.get_tape_details",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes/<barcode>/alias": {
+      "post": {
+        "summary": "Update tape alias for manual naming.",
+        "description": "Update tape alias for manual naming.",
+        "operationId": "tapes.update_tape_alias",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes/<barcode>/format": {
+      "post": {
+        "summary": "Format a tape with LTFS.",
+        "description": "Format a tape with LTFS.",
+        "operationId": "tapes.format_tape",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes/<barcode>/manifest": {
+      "get": {
+        "summary": "Get manifest of files on a tape",
+        "description": "Get manifest of files on a tape",
+        "operationId": "tapes.get_tape_manifest",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes/<barcode>/manifest/export": {
+      "get": {
+        "summary": "Export tape manifest as downloadable JSON file",
+        "description": "Export tape manifest as downloadable JSON file",
+        "operationId": "tapes.export_tape_manifest",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes/<barcode>/wipe": {
+      "post": {
+        "summary": "Wipe a tape completely.",
+        "description": "Wipe a tape completely.",
+        "operationId": "tapes.wipe_tape",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes/auto-alias": {
+      "post": {
+        "summary": "Auto-assign aliases to unnamed tapes.",
+        "description": "Auto-assign aliases to unnamed tapes.",
+        "operationId": "tapes.auto_alias_tapes",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes/capacity-check": {
+      "post": {
+        "summary": "Check if selected tapes have sufficient capacity for a job",
+        "description": "Check if selected tapes have sufficient capacity for a job",
+        "operationId": "tapes.check_tape_capacity",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes/random-name": {
+      "get": {
+        "summary": "Get a single random name.",
+        "description": "Get a single random name.",
+        "operationId": "tapes.get_random_tape_name",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes/reclaim/candidates": {
+      "get": {
+        "summary": "Get tapes suitable for reclamation.",
+        "description": "Get tapes suitable for reclamation.",
+        "operationId": "tapes.get_reclaim_candidates",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes/reclaim/start": {
+      "post": {
+        "summary": "Start a tape reclaim job.",
+        "description": "Start a tape reclaim job.",
+        "operationId": "tapes.start_reclaim_job",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/tapes/scan": {
+      "post": {
+        "summary": "Trigger a library scan (fast or deep).",
+        "description": "Trigger a library scan (fast or deep).",
+        "operationId": "tapes.scan_library",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "summary": "Trigger a library scan (fast or deep).",
+        "description": "Trigger a library scan (fast or deep).",
+        "operationId": "tapes.scan_library",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/uploads/chunk/<session_id>": {
+      "post": {
+        "summary": "Append a chunk to the upload session.",
+        "description": "Append a chunk to the upload session.",
+        "operationId": "uploads.upload_chunk",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/uploads/finalize/<session_id>": {
+      "post": {
+        "summary": "Verify upload and move to final staging area.",
+        "description": "Verify upload and move to final staging area.",
+        "operationId": "uploads.finalize_session",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/uploads/session": {
+      "post": {
+        "summary": "Start a new upload session.",
+        "description": "Start a new upload session.",
+        "operationId": "uploads.create_session",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/uploads/session/<session_id>": {
+      "delete": {
+        "summary": "Cancel and cleanup session.",
+        "description": "Cancel and cleanup session.",
+        "operationId": "uploads.cancel_session",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/verification/reports": {
+      "get": {
+        "summary": "Get recent verification reports.",
+        "description": "Get recent verification reports.",
+        "operationId": "verification.get_reports",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/verification/reports/<int:report_id>": {
+      "get": {
+        "summary": "Get a specific verification report.",
+        "description": "Get a specific verification report.",
+        "operationId": "verification.get_report",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/verification/start": {
+      "post": {
+        "summary": "Start a manual verification job.",
+        "description": "Start a manual verification job.",
+        "operationId": "verification.start_verification",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.pytest_cache/
+.hypothesis/
+.coverage
+htmlcov/
+.tox/
+.venv/
+venv/
+ENV/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build outputs
+*.log
+*.tmp
+*.bak
+*.orig
+
+# FossilSafe specific
+dev_data/
+backend/data/
+*.db
+*.db-*
+.flask_secret
+credential_key.bin
+job_*.json
+support_bundle_*.zip
+SupportBundle_*.zip
+**/backup-snapshots/
+**/diagnostics/reports/
+
+# Licensing (Security)
+scripts/gen_keypair.py
+scripts/generate_license.py
+admin_tools/
+docs/LICENSING_FLOW.md
+docs/DISTRIBUTION_STRATEGY.md
+*.pem
+*.bin
+test_venv/
+
+# Dev/Testing artifacts (recursive)
+**/.pytest_cache/
+**/.hypothesis/
+**/__pycache__/
+**/coverage/
+**/test-results/
+**/*.test.log
+**/*.spec.log
+**/junit*.xml
+**/coverage*.xml
+**/.coverage*
+**/htmlcov/
+**/.mypy_cache/
+**/.ruff_cache/
+**/pytest_cache/
+**/*.pyc
+**/*.pyo
+
+# Test databases and temp files
+**/test*.db
+**/test*.db-journal
+**/*_test_*.json
+**/stress_test.db*
+**/test_output/
+**/tmp/
+**/.tmp/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+Thumbs.db
+Desktop.ini
+website/
