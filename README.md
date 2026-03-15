@@ -79,3 +79,7 @@ Contributions require a `Signed-off-by` line agreeing to the Developer Certifica
 ## License
 
 FossilSafe is licensed under the **GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later)**.
+
+## Contact
+
+For direct inquiries or private vulnerability disclosures, you can reach me at: <a href="mailto:contact&#64;fossilsafe.io">contact&#64;fossilsafe.io</a>
