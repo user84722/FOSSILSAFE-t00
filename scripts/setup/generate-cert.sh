@@ -1,35 +1,32 @@
-#!/bin/bash
-# Generate self-signed TLS certificate for FossilSafe
-# Run as root or with sudo
+#!/usr/bin/env bash
+# Generate self-signed SSL certificates for FossilSafe
+# Usage: ./generate-cert.sh [DOMAIN_NAME]
 
-set -e
+set -euo pipefail
 
+DOMAIN="${1:-fossilsafe.local}"
 CERT_DIR="/etc/fossilsafe/certs"
-HOSTNAME="${1:-fossilsafe.local}"
-DAYS=365
+KEY_PATH="${CERT_DIR}/server.key"
+CERT_PATH="${CERT_DIR}/server.crt"
 
-echo "Generating self-signed TLS certificate for: $HOSTNAME"
+echo "Generating self-signed SSL certificate for ${DOMAIN}..."
 
-# Create directory
-mkdir -p "$CERT_DIR"
-chmod 700 "$CERT_DIR"
+# Create cert directory
+mkdir -p "${CERT_DIR}"
+chmod 755 "${CERT_DIR}"
 
-# Generate private key and certificate
-openssl req -x509 -nodes -days $DAYS \
-    -newkey rsa:2048 \
-    -keyout "$CERT_DIR/server.key" \
-    -out "$CERT_DIR/server.crt" \
-    -subj "/C=US/ST=State/L=City/O=FossilSafe/OU=Backup/CN=$HOSTNAME" \
-    -addext "subjectAltName=DNS:$HOSTNAME,DNS:localhost,IP:127.0.0.1"
+# Generate private key (4096-bit RSA)
+openssl genrsa -out "${KEY_PATH}" 4096 2>/dev/null
+chmod 400 "${KEY_PATH}"
 
-# Set permissions
-chmod 600 "$CERT_DIR/server.key"
-chmod 644 "$CERT_DIR/server.crt"
+# Generate self-signed certificate (365 days)
+openssl req -new -x509 -key "${KEY_PATH}" -out "${CERT_PATH}" \
+  -days 365 \
+  -subj "/CN=${DOMAIN}/O=FossilSafe/C=US" \
+  -addext "subjectAltName=DNS:${DOMAIN},DNS:localhost,IP:127.0.0.1" \
+  2>/dev/null
+chmod 444 "${CERT_PATH}"
 
-echo ""
-echo "Certificate generated successfully!"
-echo "  Certificate: $CERT_DIR/server.crt"
-echo "  Private Key: $CERT_DIR/server.key"
-echo ""
-echo "To use with nginx, update /etc/nginx/sites-available/fossilsafe"
-echo "Then run: sudo systemctl reload nginx"
+echo "✓ Certificate generated: ${CERT_PATH}"
+echo "✓ Private key: ${KEY_PATH}"
+echo "Note: Self-signed certificate will show browser warnings. Use Let's Encrypt for production."

@@ -1,25 +1,37 @@
-# /etc/sudoers.d/fossilsafe
-# FossilSafe service user permissions for NFS and external media operations
-# Install: sudo cp deploy/sudoers-fossilsafe /etc/sudoers.d/ && sudo chmod 440 /etc/sudoers.d/fossilsafe
+# FossilSafe sudoers configuration
+# Allows the fossilsafe service user to run tape operations without password
 
-# NFS/CIFS mount operations - restricted to /mnt/fossilsafe/
-# We enforce the destination prefix and allow common mount options.
-# Note: Options are restricted in the backend, but we provide broad patterns here for flexibility 
-# with the recommendation to use nosuid,nodev in the backend calls.
-fossilsafe ALL=(root) NOPASSWD: /usr/bin/mount -t nfs -o *nosuid,nodev* *:/vol/* /mnt/fossilsafe/nfs/*
-fossilsafe ALL=(root) NOPASSWD: /usr/bin/mount -t nfs4 -o *nosuid,nodev* *:/vol/* /mnt/fossilsafe/nfs/*
-fossilsafe ALL=(root) NOPASSWD: /usr/bin/mount -t cifs -o *nosuid,nodev* //* /mnt/fossilsafe/smb/*
+# Tape device operations
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/mtx
+fossilsafe ALL=(root) NOPASSWD: /usr/sbin/mtx
+fossilsafe ALL=(root) NOPASSWD: /bin/mt
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/mt
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/sg_inq
+fossilsafe ALL=(root) NOPASSWD: /sbin/modprobe fuse
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/lsscsi
 
-# Unmount operations - restricted to FossilSafe managed mount points
-fossilsafe ALL=(root) NOPASSWD: /usr/bin/umount /mnt/fossilsafe/nfs/*
-fossilsafe ALL=(root) NOPASSWD: /usr/bin/umount /mnt/fossilsafe/smb/*
-fossilsafe ALL=(root) NOPASSWD: /usr/bin/umount /mnt/ltfs*
+# Mounting/unmounting LTFS
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/mkltfs
+fossilsafe ALL=(root) NOPASSWD: /usr/local/bin/mkltfs
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/ltfs
+fossilsafe ALL=(root) NOPASSWD: /usr/local/bin/ltfs
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/ltfsck
+fossilsafe ALL=(root) NOPASSWD: /usr/local/bin/ltfsck
 
-# Tape/LTFS operations
-fossilsafe ALL=(root) NOPASSWD: /usr/bin/ltfs -o devname=* /mnt/ltfs*
-fossilsafe ALL=(root) NOPASSWD: /usr/bin/mkltfs -d *
-fossilsafe ALL=(root) NOPASSWD: /usr/bin/ltfsck *
+# System utilities
+fossilsafe ALL=(root) NOPASSWD: /bin/mount
+fossilsafe ALL=(root) NOPASSWD: /bin/umount
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/fusermount3
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/fusermount
 
-# External media - restricted to read-only or nosuid
-fossilsafe ALL=(root) NOPASSWD: /usr/bin/mount -o *nosuid,nodev* /dev/sd[a-z][0-9] /mnt/fossilsafe/external/*
-fossilsafe ALL=(root) NOPASSWD: /usr/bin/mount -o *nosuid,nodev* /dev/nvme[0-9]n[0-9]p[0-9] /mnt/fossilsafe/external/*
+# Device discovery
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/lsblk
+fossilsafe ALL=(root) NOPASSWD: /bin/lsblk
+fossilsafe ALL=(root) NOPASSWD: /usr/sbin/udevadm
+fossilsafe ALL=(root) NOPASSWD: /sbin/udevadm
+
+# Logging and diagnostics
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/sg_ses
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/sg_logs
+fossilsafe ALL=(root) NOPASSWD: /usr/bin/smartctl
+fossilsafe ALL=(root) NOPASSWD: /usr/sbin/smartctl

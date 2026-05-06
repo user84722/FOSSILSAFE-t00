@@ -9,46 +9,51 @@ Type=notify
 User={{SERVICE_USER}}
 Group={{SERVICE_USER}}
 WorkingDirectory={{INSTALL_DIR}}
-
-# Environment configuration
 Environment="PATH={{VENV_DIR}}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-EnvironmentFile=-/etc/default/fossilsafe
-EnvironmentFile=-/etc/fossilsafe/config.json
-
-# Core service execution
+Environment="PYTHONPATH={{INSTALL_DIR}}"
+Environment="FOSSILSAFE_CONFIG_PATH={{CONFIG_PATH}}"
+Environment="FOSSILSAFE_DATA_DIR={{DATA_DIR}}"
 ExecStart={{VENV_DIR}}/bin/gunicorn \
-  --config {{INSTALL_DIR}}/gunicorn.conf.py \
-  --bind {{BACKEND_BIND}}:{{BACKEND_PORT}} \
-  --workers 4 \
-  --worker-class sync \
-  --timeout 300 \
-  --access-logfile - \
-  --error-logfile - \
+  --config={{INSTALL_DIR}}/gunicorn.conf.py \
+  --bind={{BACKEND_BIND}}:{{BACKEND_PORT}} \
+  --workers=2 \
+  --timeout=120 \
+  --access-logfile=- \
+  --error-logfile=- \
   backend.lto_backend_main:app
 
-ExecReload=/bin/kill -HUP $MAINPID
-Restart=on-failure
-RestartSec=10s
-
-# Process isolation & security hardening
+# Security hardening
 NoNewPrivileges=true
-PrivateTmp=true
 ProtectSystem=strict
-ProtectHome=true
-ReadWritePaths={{DATA_DIR}} {{INSTALL_DIR}}/backend /var/log/fossilsafe /var/www/fossilsafe /etc/fossilsafe
+ProtectHome=yes
+ReadWritePaths={{DATA_DIR}} {{CONFIG_PATH}}
+PrivateTmp=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+PrivateDevices=no
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
 
 # Resource limits
-MemoryLimit=2G
-CPUQuota=80%
-TasksMax=1024
+LimitNOFILE=65536
+LimitNPROC=4096
+LimitMEMLOCK=infinity
 
-# Tape device access (udev-managed group)
-SupplementaryGroups={{TAPE_GROUP}}
+# Restart policy
+Restart=on-failure
+RestartSec=10s
+StartLimitInterval=60s
+StartLimitBurst=3
 
 # Logging
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=fossilsafe
+
+# Device access for tape operations
+SupplementaryGroups={{TAPE_GROUP}}
 
 [Install]
 WantedBy=multi-user.target
